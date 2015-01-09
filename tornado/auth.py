@@ -1481,3 +1481,9 @@ def _oauth_parse_response(body):
     special = ("oauth_token", "oauth_token_secret")
     token.update((k, p[k][0]) for k in p if k not in special)
     return token
+
+
+class YahooOpenIdMixin(OpenIdMixin):
+    """Yahoo Open ID authentication"""
+    _OPENID_ENDPOINT = 'https://open.login.yahooapis.com/openid/op/auth'
+
